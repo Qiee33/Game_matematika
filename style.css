@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px;
+    border-radius: 15px;
+    border: 2px solid #00ff00;
+}
+
+.score {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.timer {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ff00;
+}
+
+.question {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 40px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.answer-display {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 24px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #00ff00;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.key {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border: none;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.key:hover {
+    background: linear-gradient(145deg, #00ff00, #00cc00);
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 255, 0, 0.3);
+}
+
+.key:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.3);
+}
+
+.key.clear {
+    background: linear-gradient(145deg, #ff4444, #cc0000);
+}
+
+.key.clear:hover {
+    background: linear-gradient(145deg, #ff6666, #ff0000);
+    color: white;
+}
+
+.key.submit {
+    background: linear-gradient(145deg, #00ff00, #00cc00);
+    color: black;
+}
+
+.key.submit:hover {
+    background: linear-gradient(145deg, #44ff44, #00ff00);
+}
+
+.result-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 2000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+.notification.correct {
+    background: linear-gradient(135deg, #00ff00, #44ff44);
+    color: black;
+    border: 3px solid #00cc00;
+}
+
+.notification.wrong {
+    background: linear-gradient(135deg, #ff4444, #ff0000);
+    color: white;
+    border: 3px solid #cc0000;
+}
+
+.result-content {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+}
+
+.result-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00ff00;
+}
+
+.final-score {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.restart-btn {
+    background: linear-gradient(145deg, #00ff00, #00cc00);
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+}
+
+.restart-btn:hover {
+    background: linear-gradient(145deg, #44ff44, #00ff00);
+    transform: scale(1.05);
+}
+
+.progress-bar {
+    background: rgba(0, 0, 0, 0.5);
+    height: 8px;
+    border-radius: 4px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #00ff00, #44ff44);
+    height: 100%;
+    width: 10%;
+    transition: width 0.3s ease;
+}

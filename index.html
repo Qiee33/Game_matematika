@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Matematika</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div class="score">Soal: <span id="questionNumber">1</span>/10</div>
+            <div class="timer">Waktu: <span id="timer">60</span>s</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="question" id="question">5 + 3 = ?</div>
+
+        <div class="answer-display" id="answerDisplay">_</div>
+
+        <div class="keyboard">
+            <button class="key" onclick="inputNumber('1')">1</button>
+            <button class="key" onclick="inputNumber('2')">2</button>
+            <button class="key" onclick="inputNumber('3')">3</button>
+            <button class="key" onclick="inputNumber('4')">4</button>
+            <button class="key" onclick="inputNumber('5')">5</button>
+            <button class="key" onclick="inputNumber('6')">6</button>
+            <button class="key" onclick="inputNumber('7')">7</button>
+            <button class="key" onclick="inputNumber('8')">8</button>
+            <button class="key" onclick="inputNumber('9')">9</button>
+            <button class="key" onclick="inputNumber('0')">0</button>
+            <button class="key clear" onclick="clearAnswer()">×</button>
+            <button class="key submit" onclick="submitAnswer()">✓</button>
+        </div>
+    </div>
+
+    <div class="result-screen" id="resultScreen">
+        <div class="result-content">
+            <div class="result-title">🎉 Selesai! 🎉</div>
+            <div class="final-score">
+                Skor Akhir: <span id="finalScore">0</span>/10
+            </div>
+            <div id="resultMessage"></div>
+            <button class="restart-btn" onclick="restartGame()">Mulai Ulang</button>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
